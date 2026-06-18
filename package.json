@@ -1,0 +1,21 @@
+{
+  "name": "kbc-fe",
+  "version": "1.0.0",
+  "description": "Simple Node server for KBC front-end assignments",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [
+    "kbc",
+    "frontend",
+    "server"
+  ],
+  "author": "Hesham Hassan",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
