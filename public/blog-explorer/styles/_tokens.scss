@@ -1,0 +1,15 @@
+@use 'sass:map';
+
+// design tokens
+$brand:  #6b2fb3;
+$ink:    #1c1c28;
+$muted:  #6b6b76;
+$border: #e3e0ea;
+$bg:     #faf9fc;
+
+$breakpoints: (tablet: 600px, desktop: 992px);
+
+// min-width breakpoint helper: @include bp(tablet) { … }
+@mixin bp($name) {
+  @media (min-width: map.get($breakpoints, $name)) { @content; }
+}

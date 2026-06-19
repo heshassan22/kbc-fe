@@ -1,0 +1,8 @@
+@use 'tokens' as *;
+
+// Style the card. Hooks: .card · .card__title · .card__author · .card__excerpt
+// The reveal animation toggles .card--in (added by the IntersectionObserver) —
+// start hidden (opacity 0) and fade in when .card--in is present.
+.card {
+  // TODO
+}

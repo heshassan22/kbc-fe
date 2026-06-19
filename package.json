@@ -6,7 +6,9 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "node --watch server.js"
+    "dev": "node --watch server.js",
+    "build:css": "sass public/blog-explorer/styles/main.scss public/blog-explorer/styles/main.css --no-source-map",
+    "watch:css": "sass --watch public/blog-explorer/styles/main.scss public/blog-explorer/styles/main.css --no-source-map"
   },
   "keywords": [
     "kbc",
@@ -17,5 +19,8 @@
   "license": "MIT",
   "dependencies": {
     "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "sass": "^1.77.0"
   }
 }
