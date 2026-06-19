@@ -6,7 +6,7 @@ import { createPostDialog } from './components/post-dialog.js';
 
 const main = async () => {
   const status = document.querySelector('.status');
-
+  console.log('main', status);
   // TODO — wire it up:
   //  1. createPostDialog(document.querySelector('.dialog'))   // listens for 'post:open'
   //  2. const list = createPostList(document.querySelector('.posts'))
