@@ -1,4 +1,4 @@
-import { el, excerpt } from '../lib/dom.js';
+import { el, excerpt } from '../utils.js';
 
 // Renders post cards and reveals them on scroll.
 // Returns { render(posts), filter(query) }.

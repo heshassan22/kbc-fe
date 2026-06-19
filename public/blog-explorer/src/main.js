@@ -1,5 +1,5 @@
 import { getPosts, getUsers } from './api.js';
-import { joinAuthors } from './lib/transform.js';
+import { joinAuthors } from './utils.js';
 import { createSearchBar } from './components/search-bar.js';
 import { createPostList } from './components/post-list.js';
 import { createPostDialog } from './components/post-dialog.js';

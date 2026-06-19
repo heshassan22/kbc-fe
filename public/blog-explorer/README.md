@@ -21,7 +21,7 @@ npm run watch:css
 ## What to build
 
 - `src/api.js` — given (fetch helpers).
-- `src/lib/` — `debounce.js` (given), `dom.js` + `transform.js` (TODO).
+- `src/utils.js` — `debounce` (given), plus `el` / `excerpt` / `joinAuthors` (TODO).
 - `src/components/` — `search-bar.js`, `post-list.js`, `post-dialog.js` (TODO).
 - `src/main.js` — wire the components together (TODO).
 - `styles/_post-card.scss`, `styles/_dialog.scss` — style the cards + dialog (TODO).

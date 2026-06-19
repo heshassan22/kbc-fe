@@ -1,5 +1,5 @@
 import { getComments } from '../api.js';
-import { el } from '../lib/dom.js';
+import { el } from '../utils.js';
 
 // A <dialog> showing a post and its comments. Listens for the 'post:open' event.
 export const createPostDialog = (root) => {
