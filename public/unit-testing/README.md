@@ -1,26 +1,37 @@
-# Unit Testing — Checkpoint Assignment
+# Unit Testing — Assignment (DOM Tests & Coverage)
 
-Apply lessons **01–05** of the Unit Testing track: test pure logic, mocks, and async code.
-Jest is **already set up** for you.
+This extends the **checkpoint** project. It applies lessons **06–08**: test a component in
+the DOM, organize the suite, and make coverage **meaningful**. Jest is **already set up** for you
+(including the coverage threshold).
 
-**Spec:** https://heshassan22.github.io/netcentric-academy/#/unit-testing/checkpoint-assignment
+**Spec:** https://heshassan22.github.io/netcentric-academy/#/unit-testing/assignment
+(If you skipped the checkpoint, do https://heshassan22.github.io/netcentric-academy/#/unit-testing/checkpoint-assignment first.)
 
 ## Run the tests
 
 ```bash
-npm install          # first time only
-npm test             # run once
-npm run test:watch   # re-run on save
+npm install             # first time only
+npm test                # run once
+npm run test:watch      # re-run on save
+npm run test:coverage   # with a coverage report (enforces the 80% threshold)
 ```
 
 ## What's here
 
 ```
 src/
-  money.js / money.test.js        formatPrice(cents)   — Part A
-  users.js / users.test.js        loadUser(id) -> fetch — Part B (mock fetch)
-  debounce.js / debounce.test.js  debounce(fn, ms)     — Part B (fake timers)
+  money.js / users.js / debounce.js   checkpoint logic + tests
+  counter.js                          a DOM component         — under test (provided)
+  counter.test.js                     Part 1 — DOM + custom event
 ```
 
-The source files are written for you. Each `*.test.js` has **one worked example** — add the
-remaining cases listed in its comments (and in the spec). Test **behaviour**, not implementation.
+## Your job
+
+1. **Part 1 (DOM):** in `counter.test.js`, the click test is filled in — add the test for the
+   `counter:reset` custom event (dispatch it on `window`, assert the display went back to `0`).
+2. **Part 2 (coverage):** run `npm run test:coverage`. The config already enforces an 80%
+   threshold — write tests until it passes, and make sure each test asserts something real (find
+   any "vanity" test that runs code but asserts nothing, and make it real).
+
+Assert on what the user sees, keep the suite grouped and readable, and gut-check coverage by
+breaking a line of production code — if no test goes red, that line isn't meaningfully covered.
