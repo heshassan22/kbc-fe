@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Counter — demo</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        background: #0f172a;
+        color: #e2e8f0;
+      }
+      main {
+        text-align: center;
+        padding: 2rem;
+      }
+      .counter {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-top: 1.5rem;
+        padding: 1rem 1.25rem;
+        background: #1e293b;
+        border-radius: 8px;
+      }
+      .counter button {
+        font: inherit;
+        cursor: pointer;
+        border: 0;
+        border-radius: 6px;
+        padding: 0.4rem 0.9rem;
+        background: #334155;
+        color: #e2e8f0;
+      }
+      .counter button:hover {
+        background: #475569;
+      }
+      .counter__value {
+        min-width: 2ch;
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+      p {
+        opacity: 0.75;
+      }
+      code {
+        background: #1e293b;
+        padding: 0.15rem 0.4rem;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Counter</h1>
+      <p>The component under test. Run <code>npm test</code> for the Jest tests.</p>
+
+      <div class="counter">
+        <button class="counter__inc">+</button>
+        <button class="counter__reset">reset</button>
+        <span class="counter__value">0</span>
+      </div>
+    </main>
+
+    <script type="module">
+      import Counter from './src/counter.js';
+      document.querySelectorAll('.counter').forEach((el) => Counter(el, { step: 1 }));
+    </script>
+  </body>
+</html>
