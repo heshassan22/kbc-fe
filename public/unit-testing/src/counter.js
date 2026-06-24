@@ -1,37 +1,28 @@
-// counter.js — a tiny DOM component to test in jsdom.
+// counter.js — a small functional DOM component (no framework, no dependencies).
 // Markup:
 //   <div class="counter">
-//     <button class="counter__btn">+</button>
+//     <button class="counter__inc">+</button>
+//     <button class="counter__reset">reset</button>
 //     <span class="counter__value">0</span>
 //   </div>
-// Clicking the button increments the value. Dispatching a "counter:reset"
-// event on window resets it to 0.
-export default class Counter {
-  constructor(element, { step = 1 } = {}) {
-    this.element = element;
-    this.step = step;
-    this.value = 0;
-    this.valueEl = element.querySelector('.counter__value');
+// Clicking "+" increments the value; clicking "reset" sets it back to 0.
+export default function Counter(element, { step = 1 } = {}) {
+  let value = 0;
+  const valueEl = element.querySelector('.counter__value');
 
-    element
-      .querySelector('.counter__btn')
-      .addEventListener('click', () => this.increment());
-    window.addEventListener('counter:reset', () => this.reset());
+  const render = () => {
+    valueEl.textContent = String(value);
+  };
 
-    this.render();
-  }
+  element.querySelector('.counter__inc').addEventListener('click', () => {
+    value += step;
+    render();
+  });
 
-  increment() {
-    this.value += this.step;
-    this.render();
-  }
+  element.querySelector('.counter__reset').addEventListener('click', () => {
+    value = 0;
+    render();
+  });
 
-  reset() {
-    this.value = 0;
-    this.render();
-  }
-
-  render() {
-    this.valueEl.textContent = String(this.value);
-  }
+  render();
 }

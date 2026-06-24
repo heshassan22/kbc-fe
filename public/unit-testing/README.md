@@ -28,7 +28,7 @@ src/
 ## Your job
 
 1. **Part 1 (DOM):** in `counter.test.js`, the click test is filled in — add the test for the
-   `counter:reset` custom event (dispatch it on `window`, assert the display went back to `0`).
+   **reset** button (click `.counter__reset`, assert the display went back to `0`).
 2. **Part 2 (coverage):** run `npm run test:coverage`. The config already enforces an 80%
    threshold — write tests until it passes, and make sure each test asserts something real (find
    any "vanity" test that runs code but asserts nothing, and make it real).
